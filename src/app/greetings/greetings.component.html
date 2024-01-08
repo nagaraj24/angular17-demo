@@ -1,0 +1,18 @@
+<h1 class="text-center text-3xl py-2 text-[#fd5f07] font-bold" >Greeting Widget</h1>
+<mat-card class="example-card cursor-pointer ease-out duration-500 hover:shadow-[0_3px_20px_5px_rgba(204,204,204,1)]" >
+    <mat-card-header>
+      <mat-card-title class="font-bold text-[#fd5f07]">{{currentDate}}</mat-card-title>
+      <mat-card-subtitle>{{greetingText}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{greetingText}}</p>
+      <div class="clock">
+        <div class="time" id="hour">{{hourText}}</div>
+        <div class="colon">:</div>
+        <div class="time" id="min">{{minutesText}}</div>
+        <div class="colon">:</div>
+        <div class="time" id="sec">{{secondsText}}</div>
+      </div>
+    </mat-card-content>
+    
+</mat-card>

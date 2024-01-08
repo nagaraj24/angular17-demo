@@ -1,1 +1,23 @@
-<p>home works!</p>
+<h1 class="text-center text-3xl py-2 text-[#fd5f07] font-bold" >Angular Widget Gallery</h1>
+
+@if (homeWidgetGallery.length > 0) {
+    <h2 class="text-center">Welcome to Angular Widgets Gallery</h2>
+    <div class="widget-container grid grid-cols-3 gap-4 py-4">
+    @for (homeWidgetGalleries of homeWidgetGallery; track $index) {
+        <mat-card class="example-card cursor-pointer ease-out duration-500 hover:shadow-[0_3px_20px_5px_rgba(204,204,204,1)]" >
+            <mat-card-header>
+              <mat-card-title class="font-bold text-[#fd5f07]">{{homeWidgetGalleries.title}}</mat-card-title>
+              <mat-card-subtitle>Angular Widgets</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>{{homeWidgetGalleries.desc}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <a mat-raised-button color="warn" href={{homeWidgetGalleries.url}} >View</a>
+            </mat-card-actions>
+        </mat-card>
+    }
+    </div>
+} @else {
+    <h2>No Widgets found!</h2>
+}
