@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { Subscription, timer } from "rxjs";
-import { map, share } from "rxjs/operators";
+
 
 @Component({
   selector: 'app-greetings',
@@ -11,7 +10,7 @@ import { map, share } from "rxjs/operators";
   templateUrl: './greetings.component.html',
   styleUrl: './greetings.component.scss'
 })
-export class GreetingsComponent {
+export class GreetingsComponent implements OnInit {
   currentDate:string="";
   greetingText:string="";
   hourText:string="";
@@ -23,14 +22,18 @@ export class GreetingsComponent {
   ngOnInit(){
     var today = new Date();
     this.greetingText = today.toDateString();
-    this.dateInt();
+    this.updateTime();
+    
   }
   
 
- dateInt(){
+ updateTime(){
+  const now = new Date();
+  this.time = now;
   // this.intervalId = setInterval(() => {
   //   this.time = new Date();
   // }, 1000);
+  
  }
   
 
